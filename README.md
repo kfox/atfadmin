@@ -1,4 +1,5 @@
 # atfadmin
+
 An admin mod for Tribes Next
 
 ## About
@@ -14,12 +15,12 @@ Suggestions and contributions welcomed!
 
 ## Installation
 
-1. Place the atfadmin.vl2 in your GameData\base directory
-2. Restart your server
-3. Stop your server
-4. Edit the prefs/atfadmin.cs file to select server preferences
-5. (optional) Edit the prefs/MapRotation.cs file to select the map rotation
-6. Restart your server
+1. Download the vl2 of the [latest release](https://github.com/kfox/atfadmin/releases/latest) and put it in your server's GameData\base directory.
+2. Restart your server.
+3. Stop your server.
+4. Edit the prefs/atfadmin.cs file to select server preferences.
+5. (optional) Edit the prefs/MapRotation.cs file to select the map rotation.
+6. Restart your server.
 
 ## Credits
 
