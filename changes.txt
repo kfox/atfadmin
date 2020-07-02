@@ -1,0 +1,267 @@
+Legend
+------
+
+(!) Fix
+(+) Added
+(-) Removed
+(=) Changed
+
+atfadmin v2.3.3 R2 (20090308)
+--------------------------
+(!) updated the version number
+
+atfadmin v2.3.3 (20090122)
+--------------------------
+(!) created lazy fixes for TribesNext support (search TNHAX in scripts\atfadmin\server.cs)
+
+atfadmin v2.3.2 (20050415)
+--------------------------
+(!) version number updated
+(+) added SCtF support in maprotation file
+
+atfadmin v2.3.1 (20050415)
+--------------------------
+(+) added new pref for extended Siege tourney halftime:
+		$atfadmin::EnableExtendedSiegeTourneyHalftime
+(=) tighter integration with classic mod 1.4.1
+(=) logEcho now logs sane dates and times
+
+atfadmin v2.3.0 (20050414)
+--------------------------
+(=) $atfadmin::AllowAdminTournamentMode now known as
+$atfadmin::AllowAdminChangeMode
+(=) $atfadmin::AllowPlayerVoteTournamentMode now known as
+$atfadmin::AllowPlayerVoteChangeMode
+(=) always enable voice packs in tournament mode
+(+) new prefs to manage Defense Turret:
+		$atfadmin::EnableDefenseTurretForFFA
+		$atfadmin::EnableDefenseTurretForTournament
+		$atfadmin::EnableDefenseTurretForPickup
+(+) new Captain pref: $atfadmin::AllowPlayerVoteCaptain
+(+) map queueing/dequeueing added
+(+) new queue prefs:
+		$atfadmin::AllowAdminQueueMission
+		$atfadmin::AllowPlayerVoteQueueMission
+(!) allow Defense Turret voting options to work for SA
+(!) map rotation file no longer required (set filename = none)
+(-) removed $atfadmin::RotateAllMaps pref
+(+) added $atfadmin::MixGametypes pref
+(-) removed .listmissions chat command
+(+) added .passvote chat command and pass vote lobby option
+(!) fixed mpb deploy problems in tourney mode
+(=) tourney mode siege halftime now pauses like pre-game
+
+atfadmin v2.2.0 (20040420)
+--------------------------
+(+) added initial version of stats
+(!) prevented maprotation file from being forced
+(+) added CnH and DnD anti-baserape and other support
+(=) behaves transparently in tournament mode
+(!) several minor bugfixes for more robust classic 1.4.1 compliance
+
+atfadmin v2.1.5 (mystery release date!)
+--------------------------
+(=) allow admins to vote for other gametypes even when regular players cannot
+(!) added cleanup for deployables
+
+atfadmin v2.1.4 (20030424)
+--------------------------
+(=) admins can no longer force other admins to be observers
+(!) privileged player addition/removal now logged properly
+
+atfadmin v2.1.3 (20030403)
+--------------------------
+(!) changed "him" to "his" in vehicle tk messages
+(!) fixed typo in admin auto pw code
+(=) changed add/remove privileged player chat messages
+(!) fixed admin 'A' problems in lobby
+(!) fixed "all" target for in-game rule display
+
+atfadmin v2.1.2 (20030329)
+--------------------------
+(!) fixed display of enable/disable asset tracking messages menu item
+(=) limited number of messages when a player damages their own team's
+    vehicles
+(=) vehicle damage messages disabled during tournament mode
+
+atfadmin v2.1.1 (20030328)
+--------------------------
+(!) fixed gender (his/her) display for vehicle tk message
+(!) allow rule target "all"
+
+atfadmin v2.1.0 (20030328)
+--------------------------
+(-) removed fireball code
+(-) removed Adaptive Siege
+(=) changed VL2 layout
+(=) admins will be informed of a vote to kick regardless of team
+(+) .com chat command allows comments to be made for current map if
+    $atfadmin::AllowComments is true
+(+) admins may enable/disable asset tracking if
+    $atfadmin::AllowAdminToggleAssetTracking is true
+(=) asset tracking automatically disabled for tournament mode
+(!) admins can change the time limit again (ooops!)
+(+) server rules can be displayed in-game ($atfadmin::Rule[Count] and
+    $atfadmin::Rule[num])
+(+) default values for $Host::Map, $Host::MissionType, $Host::Password,
+    $Host::TimeLimit, and $Host::TournamentMode can be forced via
+	$atfadmin::Default::Map, $atfadmin::Default::MissionType,
+	$atfadmin::Default::Password, $atfadmin::Default::TimeLimit, and
+	$atfadmin::Default::TournamentMode, respectively.
+(!) fixed 'Match start cancelled by %1' message
+(=) admins may force themselves to become observers
+(!) admin "warn player" message fixed
+(-) all Tribes 2 Demo references removed
+(!) identify admin responsible for forcing a player observer
+(+) added anti-baserape option ($atfadmin::BaseRapeMinimumPlayers)
+(+) permanent or temporary per-player voice pack block option added
+    (NB: not working, disabled by default until fixed)
+(+) added a server auto-password feature to ensure a minimum number
+    of admins can join the server ($atfadmin::AdminAutoPWCount,
+	$atfadmin::AdminAutoPWEnabled, $atfadmin::AdminAutoPWPassword)
+(+) added .time chat command ($atfadmin::TimeZone)
+(=) changed "name" target specification for chat command to require
+    name entry without tribal tag
+(!) votes will now pass if they are greater than or equal to
+    $Host::VotePassPercent (used to only pass if greater than)
+(!) time limit change actually works in Siege now; only allowed during
+    the first round
+(+) default tournament mode time limits per gametype can be set via
+    $atfadmin::TournamentModeTimeLimit[<gametype>]
+
+atfadmin v2.0.1 (20021129)
+--------------------------
+(=) now works under other mods (instead of as a mod itself)
+(=) atfadmin prefs now stored in prefs/atfadmin.cs, which will be created at
+    server shutdown if it does not exist
+(=) maprotation.cs will be created if it is defined but does not exist
+(-) all old "match mode" stuff removed
+(-) all old CTF-specific stuff removed
+(=) made export prefs optional (for server or atfadmin)
+(=) made Showdown Siege voteable/admin-toggleable
+(+) added clientside indicator to maprotation.cs format
+(+) added option to skip current mission by vote or admin
+(+) added option to preserve map rotation continuity after playing a voted map
+(+) admins may de-admin/re-admin themselves for voting purposes
+(+) added .shownext chat command to show next mission in rotation
+(+) added blow up player option for admins (menu and chat command)
+(!) fixed global mute vote option for players
+(+) added option to allow admins to add players to the privileged list
+(+) added vehicle team damage announcement to passengers
+(+) added reset showdown siege option
+
+atfadmin v1.2.15 (20021112)
+---------------------------
+(!) fixed the team-based voice pack block
+(=) changed the ff clip range from 2m to 3m
+(-) removed CTF code
+
+atfadmin v1.2.14 (20021010)
+---------------------------
+(-) removed the repair pack modifications in Adaptive Siege
+(+) added Showdown Siege
+(!) fixed minor logging inconsistencies
+
+atfadmin v1.2.13 (20021006)
+---------------------------
+(!) prevented animation-related cheats
+(+) Adaptive Siege added
+(=) disabled Havoc TK script until it can be fixed
+
+atfadmin v1.2.12 (20021002)
+---------------------------
+(=) comment date format now MM/DD/YYYY
+(+) tribe member join/leave announce
+(+) asset repair logging
+
+atfadmin v1.2.11 (20021001)
+---------------------------
+(+) added "invisible admin" observer mode
+(+) added havoc TK notification script
+
+atfadmin v1.2.10 (20020930)
+---------------------------
+(!) support for patch 25026 (displayDeathMessages)
+(+) distinct logging for deployable turret kills
+
+atfadmin v1.2.9 (20020827)
+--------------------------
+(=) added better player join/drop info (logging)
+(!) server now properly logs tank mortar/chaingun kills, shrike blaster kills,
+and belly turret kills
+(!) fixed a few spots where admin name wasn't being logged
+(-) removed unused timestamp code
+
+atfadmin v1.2.8 (20020727)
+--------------------------
+(!) Player names correctly logged for vehicle and turret kills
+(=) Admin names logged for admin actions
+(!) Global Mute/Unmute Player now works correctly
+
+atfadmin v1.2.7 (20020601)
+--------------------------
+(=) Clients who go observer cannot instantly rejoin a team
+(=) Replaced banlist.cs with Permanent Ban list to keep out server undesirables
+(!) Truly randomize the teams
+(=) Players may vote to globally mute/unmute other players
+(+) Maps can be specified as either client- or server-side in the map rotation file
+
+atfadmin v1.2.6 (20020523)
+--------------------------
+(!) Vote initiation to change the mission encloses gametype with parens
+(!) Spurious asset kill messages suppressed
+
+atfadmin v1.2.5 (20020522)
+--------------------------
+(+) Vote initiation now logged
+(!) Tribe tags now show up in asset kill messages
+
+atfadmin v1.2.4 (20020521)
+--------------------------
+(=) Console Chat (.cc) available for use by ALL players
+(=) Asset kill popups now include player tribe tag
+
+atfadmin v1.2.2 (20020507)
+--------------------------
+(=) Admin Chat (.ac) now appears in yellow text
+(=) "Dot-commands" can now be used in global chat or team chat
+(=) Asset kill messages are more readable
+
+atfadmin v1.2.1 (20020419)
+--------------------------
+(!) Fixed right-click fireball shower problem
+
+atfadmin v1.2.0 (20020419)
+--------------------------
+(+) Added .ac (admin chat) chat console command
+(+) Added .smite (lightning strike) chat console command
+(+) Added .fireball (fireball shower) chat console command
+(+) Added .cancelvote chat console command
+(+) Added fireball shower
+
+atfadmin v1.1.0 (20020417)
+--------------------------
+(+) Allow admins to cancel votes in progress
+(+) Added per-player global mute/unmute
+(+) Added per-player allow/disallow voting
+(+) Added lightning strike
+
+atfadmin v1.0.0 (20020415)
+--------------------------
+(=) Colorized the tk detection popups
+(+) Added Siege round info popup
+(=) ConsoleChat now also records teamchat
+(+) Added option to globally mute voice packs
+(+) Added "privileged player" kick/ban protection
+
+atfadmin v0.1.0 (20020330)
+--------------------------
+(!) Made .changemission behave properly for regular admins
+(+) Added .bp command for admins to issue bottomprintall
+(+) Added .cc command for admins to "chat" with the console
+(+) Added team asset tk detection (e.g., generators, sensors, invo stations,
+    turrets)
+
+atfadmin v0.0.1 (20020328)
+--------------------------
+(+) initial alpha release

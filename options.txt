@@ -1,0 +1,359 @@
+$atfadmin::AdminAutoPWCount
+	minimum number of player slots to reserve for admins
+
+$atfadmin::AdminAutoPWEnabled
+	true = enable the AdminAutoPW feature
+	false = disable the AdminAutoPW feature
+
+$atfadmin::AdminAutoPWPassword
+	password the server will use if it doesn't have at least
+	$atfadmin::AdminAutoPWCount admins and the $HostGamePlayerCount
+	is greater than or equal to $Host::MaxPlayers - %adminsNeeded
+
+$atfadmin::AllowAddToAdminList
+	true = allow admins to add players to server admin list
+	false = do not allow admins to add players to server admin list
+
+$atfadmin::AllowAdminAddBots
+	true = allow admins to add bots
+	false = do not allow admins to add bots
+
+$atfadmin::AllowAdminAdmin
+	true = allow admins to make other players admin
+	false = do not allow admins to make other players admin
+
+$atfadmin::AllowAdminBlowupPlayers
+	true = allow admins to blow up players
+	false = do not allow admins to blow up players
+
+$atfadmin::AllowAdminBottomPrint
+	true = allow admins to bottomprint messages
+	false = do not allow admins to bottomprint messages
+
+$atfadmin::AllowAdminCancelVote
+	true = allow admins to cancel running votes
+	false = do not allow admins to cancel running votes
+
+$atfadmin::AllowAdminCenterPrint
+	true = allow admins to centerprint messages
+	false = do not allow admins to centerprint messages
+
+$atfadmin::AllowAdminChangeMission
+	0 = do not allow admins to change the mission
+	1 = allow admins to change the mission
+	2 = allow admins to change the mission or gametype
+
+$atfadmin::AllowAdminChangeMode
+	true = allow admin to change the server to tournament, pickup, or ffa mode
+	false = do not allow admin to change the server to tournament, pickup, or
+	ffa mode
+
+$atfadmin::AllowAdminChangeTimeLimit
+	true = allow admins to change the time limit
+	false = do not allow admins to change the time limit
+
+$atfadmin::AllowAdminChat
+	true = allow private messages that all admins can read
+	false = do not allow private messages that all admins can read
+
+$atfadmin::AllowAdminDisableATFAdmin
+	true = allow admins to disable or enable atfadmin
+	false = do not allow admins to disable or enable atfadmin
+
+$atfadmin::AllowAdminDisableVoting
+	true = allow admins to prevent players from voting
+	false = do not allow admins to prevent players from voting
+
+$atfadmin::AllowAdminGlobalMutePlayers
+	true = allow admins to globally mute players
+	false = do not allow admins to globally mute players
+
+$atfadmin::AllowAdminKickBan
+	0 = do not allow admins to kick or ban players
+	1 = allow admins to kick players
+	2 = allow admins to ban players
+	3 = allow admins to kick or ban players
+
+$atfadmin::AllowAdminLightningStrike
+	true = allow admins to lightning strike players
+	false = do not allow admins to lightning strike players
+
+$atfadmin::AllowAdminQueueMission
+	true = allow admins to enqueue/dequeue missions
+	false = do not allow admins to enqueue/dequeue missions
+
+$atfadmin::AllowAdminResetServer
+	true = allow admins to reset the server
+	false = do not allow admins to reset the server
+
+$atfadmin::AllowAdminSetPassword
+	true = allow admins to change the server join password
+	false = do not allow admins to change the server join password
+
+$atfadmin::AllowAdminShowdownSiege
+	true = allow admins to enable/disable showdown siege mode
+	false = do not allow admins to enable/disable showdown siege mode
+
+$atfadmin::AllowAdminSkipMission
+	true = allow admins to change the server to the next map in rotation
+	false = do not allow admins to change the server to the next map in rotation
+
+$atfadmin::AllowAdminTeamDamage
+	true = allow admins to enable/disable team damage
+	false = do not allow admins to enable/disable team damage
+
+$atfadmin::AllowAdminTeamInfo
+	true = allow admin to change team info
+	false = do not allow admin to change team info
+
+$atfadmin::AllowAdminToggleBaseRape
+	true = allow admins to toggle base rape on/off
+	false = do not allow admins to toggle base rape on/off
+
+$atfadmin::AllowAdminVoicePackBlock
+	true = allow admin to temporarily or permanently block/unblock a player's voice packs
+	false = do not allow admin to block/unblock a player's voice packs
+
+$atfadmin::AllowComments
+	true = allow players to log comments about the current mission
+	false = do not allow players to log comments about the current mission
+
+$atfadmin::AllowConsolePrint
+	true = allow players to send messages directly to server console
+	false = do not allow players to send messages directly to server console
+
+$atfadmin::AllowObserverChat
+	true = allow observers to globally chat
+	false = do not allow observers to globally chat
+
+$atfadmin::AllowPlayerVoteCaptain
+	true = allow players to vote for team captains in Pickup mode
+	false = do not allow players to vote for team captains in Pickup mode
+
+$atfadmin::AllowPlayerVoteChangeMission
+	0 = do not allow players to vote to change the mission
+	1 = allow players to vote to change the mission
+	2 = allow players to vote to change the mission or gametype
+
+$atfadmin::AllowPlayerVoteChangeMode
+	true = allow players to vote for tournament, pickup, or ffa mode
+	false = do not allow players to vote for tournament, pickup, or ffa mode
+
+$atfadmin::AllowPlayerVoteGlobalMutePlayers
+	true = allow players to vote to globally mute others
+	false = do not allow players to vote to globally mute others
+
+$atfadmin::AllowPlayerVoteKickBan
+	0 = do not allow players to vote to kick or ban players
+	1 = allow players to vote to kick players
+	2 = allow players to vote to ban players
+	3 = allow players to vote to kick or ban players
+
+$atfadmin::AllowPlayerVoteQueueMission
+	true = allow players to vote to enqueue/dequeue missions
+	false = do not allow players to vote to enqueue/dequeue missions
+
+$atfadmin::AllowPlayerVoteShowdownSiege
+	true = allow players to vote to enable/disable showdown siege mode
+	false = do not allow players to vote to enable/disable showdown siege mode
+
+$atfadmin::AllowPlayerVoteSkipMission
+	true = allow players to vote to change the server to the next map in rotation
+	false = do not allow players to vote to change the server to the next map in rotation
+
+$atfadmin::AllowPlayerVoteTeamDamage
+	true = allow players to vote to enable/disable team damage
+	false = do not allow players to vote to enable/disable team damage
+
+$atfadmin::AllowPlayerVoteTimeLimit
+	true = allow players to vote to change the time limit
+	false = do not allow players to vote to change the time limit
+
+$atfadmin::AllowVoicePacks
+	true = allow voice packs
+	false = disallow voice packs
+
+$atfadmin::AssetTrack[asset, state]
+
+	where asset is one of the following:
+		GeneratorLarge
+		SolarPanel
+		StationInventory
+		DeployedStationInventory
+		StationVehicle
+		SensorLargePulse
+		SensorMediumPulse
+		DeployedMotionSensor
+		DeployedPulseSensor
+		SentryTurret
+		TurretBaseLarge
+		TurretDeployedOutdoor
+		TurretDeployedWallIndoor
+		TurretDeployedFloorIndoor
+		TurretDeployedCeilingIndoor
+
+	and state is one of the following:
+		enabled
+		disabled
+
+	set the value by adding these to get the desired combined behavior:
+	4 = enable popup messages
+	2 = enable teamchat messages
+	1 = enable server logging
+	0 = do not track
+
+$atfadmin::BaseRapeMinimumPlayers
+	minimum number of players required on a team before that team's
+	assets can be disabled. in siege, this affects
+	all of the non-deployable assets that belong to the offensive
+	team. in ctf, it affects gens, solars, station invos, and
+	vehicle pads. default is 10 players. to disable, set to 0.
+
+$atfadmin::BotsMax
+	Maximum number of bots allowed
+
+$atfadmin::CnHPlayerPointTime
+	Number of seconds after a capture in CnH that a player gets a point,
+	default 12.
+
+$atfadmin::CnHTeamPointTime
+	Number of seconds after a capture in CnH that a team gets a point, default
+	12.
+
+$atfadmin::CnHTowerValue
+	Number of points each tower is worth in CnH, defaults to 1200.
+
+$atfadmin::ConsoleChat
+	true = allow console chat
+	false = disallow console chat
+
+$atfadmin::Default::Map
+$atfadmin::Default::MissionType
+$atfadmin::Default::Password
+$atfadmin::Default::TimeLimit
+$atfadmin::Default::TournamentMode
+	set these to override the respective $Host::<var> values upon server reset
+	(e.g., $atfadmin::Default::Map will override $Host::Map)
+
+$atfadmin::DisableATFAdminForTournaments
+	true = automatically disable atfadmin when entering tournament mode
+	false = do not automatically disable atfadmin when entering tournament mode
+
+$atfadmin::EnableDefenseTurretForFFA
+	true = automatically enable Defense Turret when entering FFA mode
+	false = do not automatically enable Defense Turret when entering FFA mode
+
+$atfadmin::EnableDefenseTurretForTournament
+	true = automatically enable Defense Turret when entering Tournament mode
+	false = do not automatically enable Defense Turret when entering
+	Tournament mode
+
+$atfadmin::EnableDefenseTurretForPickup
+	true = automatically enable Defense Turret when entering Pickup mode
+	false = do not automatically enable Defense Turret when entering
+	Pickup mode
+
+$atfadmin::EnableExtendedSiegeTourneyHalftime
+	true = require players to click-in for Siege halftime in Tournament mode
+	false = do not require players to click-in for Siege halftime in Tournament mode
+
+$atfadmin::EnableStats
+	true = turn on stats tracking (disabled during tournament mode)
+	false = turn off stats tracking
+
+$atfadmin::ExportATFAdminPrefs
+	true = write atfadmin prefs to prefs/atfadmin.cs upon server exit
+	false = do not write atfadmin prefs to prefs/atfadmin.cs upon server exit
+
+$atfadmin::ExportServerPrefs
+	true = write server prefs to prefs/ServerPrefs.cs upon server exit
+	false = do not write server prefs to prefs/ServerPrefs.cs upon server exit
+
+$atfadmin::HideAdminObserverMessages
+	true = do not display observe message if an admin is observing you
+	false = display observe message if an admin is observing you
+
+$atfadmin::MapRotationFile
+	Name of file containing the custom map rotation
+	Will not be used if $Host::ClassicRandomMissions is set to true
+
+$atfadmin::MixGametypes
+	true = cycle missions regardless of gametype
+	false = cycle missions of the same gametype only
+
+$atfadmin::MOTD
+	Message of the day
+	Up to three lines
+	Newline-separated (NL or \n)
+
+$atfadmin::MOTDLines
+	Number of lines in the MOTD
+	Between 1 and 3, inclusive
+
+$atfadmin::NoLlamaTeamSwaps
+	true = disallow unfair teams
+	false = allow unfair teams
+
+$atfadmin::ObserverModeRespawnTime
+	Time in seconds that a player must remain in observer mode
+		if they've forced themselves observer
+
+$atfadmin::PermanentBanList
+	Tab-separated list of permanently-banned player GUIDs
+
+$atfadmin::PreserveMapRotationContinuity
+	(This option only works if using a custom map rotation)
+	true = return to normal map rotation after playing a voted map
+	false = return to first map in rotation after playing a voted map
+
+$atfadmin::RandomTeams
+	true = randomize the teams between map changes
+	false = keep the same teams between map changes
+
+$atfadmin::ResetShowdownSiege
+	true = disable showdown siege after each mission cycle
+	false = do not disable showdown siege after each mission cycle
+
+$atfadmin::ResetTimeLimit
+	true = reset the time limit to the default upon map change
+	false = do not reset the time limit to the default upon map change
+
+$atfadmin::Rule[number]
+	where "number" begins at zero
+	defines rule number "number" for in-game display
+	(you MUST set $atfadmin::Rule[Count], see below)
+
+$atfadmin::Rule[Count]
+	set to the number of rules you have defined
+
+$atfadmin::ShowdownSiegeList
+	Tab-separated list of maps to always use with Showdown Siege
+
+$atfadmin::ShowSiegeInfo
+	true = show a centerprint blurb for siege games
+	false = do not show a centerprint blurb for siege games
+
+$atfadmin::TimeLimitList
+	List of time limits for FFA vote time limit list
+	Times are in minutes
+	Separate times by spaces
+	Set to "" to use default list
+
+$atfadmin::TimeZone
+	String representing current server timezone (e.g., "CST")
+	Can also be set to offset from GMT (e.g., "-0500 GMT")
+	Default: EST
+
+$atfadmin::TournamentModeTimeLimit[<gametype>]
+	where <gametype> is CTF, Siege, TR2, etc.
+
+$atfadmin::TribeMemberAnnounce
+	true = announce tribe member joins/drops
+	false = do not announce tribe member joins/drops
+
+$Host::PickupMode
+	true = enable Pickup mode
+	false = disable Pickup mode
+
+$Host::PrivilegedList
+	Tab-separated list of privileged player GUIDs
