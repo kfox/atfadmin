@@ -1,15 +1,12 @@
 # atfadmin
 
-An admin mod for Tribes Next
+A server admin mod for Tribes 2 and TribesNext
 
 ## About
 
-a tiny fishie's Admin Mod (atfadmin) for Tribes Next is a set of modified Tribes
-Next server functions to help manage Tribes Next games for admins and players. There is no
-client-side code within atfadmin. atfadmin is designed to be run as an add-on
-to other mods to help control your server's behavior.
+a tiny fishie's Admin Mod (atfadmin) for Tribes 2 and TribesNext is a set of modified Tribes 2 server functions to help manage games for server admins and regular players. atfadmin contains no client-side and is designed to be run as an add-on to other mods to help control your server's behavior.
 
-atfadmin originally supported Tribes 2, and was based on code from another Tribes admin mod, bwadmin.
+atfadmin was originally based on code from another Tribes admin mod, bwadmin.
 
 Suggestions and contributions welcomed!
 
@@ -30,6 +27,7 @@ Suggestions and contributions welcomed!
 ## Thanks
 
 - The Tribes 2 development team for a great game
+- The TribesNext team for keeping Tribes 2 alive
 - All the players on "the pond" servers for suggestions and encouragement
 - The original bwadmin authors who served as inspiration and initial
   developers
