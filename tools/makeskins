@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+if [ ! -d "textures" ]; then
+  echo "error: no textures directory found!"
+  exit 2
+fi
+
+if [ -n "${1}" ]; then
+  BASENAME="${1}"
+else
+  NAME=$(find textures/skins -name "*.png" | head -1)
+  BASENAME=$(basename "${NAME}" .png | sed 's/\..*$//')
+fi
+
+SKINS="${BASENAME}.vl2"
+SKINFILES=()
+mapfile -t SKINFILES <( find ./textures -type f -print0 | xargs -0 )
+
+T2BASE=${HOME}/.loki/tribes2/base
+
+rm -f "${SKINS}"
+chmod 644 "${SKINFILES[*]}"
+zip -r "${SKINS}" "${SKINFILES[*]}"
+cp -fv "${SKINS}" "${T2BASE}"
+
+skinwipe
+
+exit 0

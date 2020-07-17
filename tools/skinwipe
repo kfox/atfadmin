@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [ ! -d "textures" ]; then
+  echo "error: no textures directory found!"
+  exit 2
+fi
+
+rm -rf ./textures
+rm -f -- *.txt
+
+exit

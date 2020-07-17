@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+if [ ! -d "missions" ]; then
+  echo "error: no missions directory found!"
+  exit 2
+fi
+
+MAPDIRS=$(find . -mindepth 1 -maxdepth 1 -type d -print0 | xargs -0)
+
+for DIR in ${MAPDIRS}
+do
+  DIR=$(echo "${DIR}" | sed -e 's/^\.\///')
+  rm -rf "${DIR}"
+done
+
+rm -f -- *.txt
+
+exit

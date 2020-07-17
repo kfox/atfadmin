@@ -1,0 +1,98 @@
+#!/usr/bin/env bash
+
+# Checks a user-created map VL2 for the presence of client-side
+# assets used by the Dynamix Final Pack collection of maps.
+
+# Including those assets in a VL2 would require clients to have
+# that map pack downloaded ahead of time and would (sadly) kick them from
+# the server if they didn't.
+
+usage() {
+  echo "usage: ${0} <filename.vl2>"
+  exit 1
+}
+
+[ -z "${1}" ] && usage || VL2=$1
+
+if [ ! -f "${VL2}" ]; then
+  echo "File not found: ${VL2}"
+  exit 2
+fi
+
+FILEINTERIORS=$(unzip -p "${VL2}" -- *.mis | grep '\.dif' | sed -e 's/.*interiorFile = \"//' -e 's/\";.*$//')
+FILEMATERIALLISTS=$(unzip -p "${VL2}" -- *.mis | grep '\.dml' | sed -e 's/.*materialList = \"//' -e 's/\";.*$//')
+FILETERRAINS=$(unzip -p "${VL2}" -- *.mis | grep '\.ter' | sed -e 's/.*terrainFile = \"//' -e 's/\";.*$//')
+
+DFPINTERIORS="\
+bmiscpan_bridge0.dif \
+bmiscpan_bunker1.dif \
+bmiscpan_ruina.dif \
+bmiscpan_ruinb.dif \
+bmiscpan_ruinc.dif \
+bmiscpan_ruind.dif \
+bmiscpan_ruine.dif \
+bmiscpan_ruinf.dif \
+bmiscpan_ruing.dif \
+bmiscpan_ruinh.dif \
+bmiscpan_ruini.dif \
+bmiscpan_tower1.dif \
+bmiscpan_tower2.dif \
+btf_base1.dif \
+btf_bridge1.dif \
+btf_bridge2.dif \
+btf_bridge3.dif \
+btf_genbunk.dif \
+btf_turretplatform.dif \
+btowr9.dif \
+dbase5.dif \
+dbase6.dif \
+tri_base.dif \
+tri_gate.dif \
+tri_misc1.dif \
+tri_powerpit.dif \
+tri_tbunker.dif \
+tri_tower.dif \
+tri_wall3.dif \
+tri_wall4.dif \
+tri_wall5.dif \
+tri_wall6.dif\
+"
+
+DFPMATERIALLISTS="\
+lava_yellow.dml \
+lush_day.dml \
+lush_night.dml\
+"
+
+DFPTERRAINS="\
+BridgeTooFar.ter \
+DevilsElbow.ter \
+InnerSanctum.ter \
+IsleOfMan.ter \
+Pantheon.ter \
+Trident.ter\
+"
+
+for FILEINTERIOR in ${FILEINTERIORS}
+do
+  for DFPINTERIOR in ${DFPINTERIORS}
+  do
+    [ "${FILEINTERIOR}" = "${DFPINTERIOR}" ] && echo "${VL2} uses interior ${DFPINTERIOR}"
+  done
+done
+
+for FILEMATERIALLIST in ${FILEMATERIALLISTS}
+do
+  for DFPMATERIALLIST in ${DFPMATERIALLISTS}
+  do
+    [ "${FILEMATERIALLIST}" = "${DFPMATERIALLIST}" ] && echo "${VL2} uses sky ${DFPMATERIALLIST}"
+  done
+done
+
+for FILETERRAIN in ${FILETERRAINS}
+do
+  for DFPTERRAIN in ${DFPTERRAINS}
+  do
+    [ "${FILETERRAIN}" = "${DFPTERRAIN}" ] && echo "${VL2} uses terrain ${DFPTERRAIN}"
+  done
+done

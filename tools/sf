@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+FILES=$*
+SEDFILE=${HOME}/bin/stripfields.sed
+
+if [ -z "${FILES}" ]; then
+  mapfile -t FILES <( find . -name "*.mis" -print0 | xargs -0 )
+fi
+
+for FILE in $FILES
+do
+  if [ ! -f "${FILE}" ]; then
+    echo "error: cannot find file \"${FILE}\""
+  else
+    sed -i.orig -f "${SEDFILE}" "${FILE}"
+
+    if ! diff "${FILE}.orig" "${FILE}"
+    then
+      rm "${FILE}.orig"
+    else
+      echo "field stripping failed!"
+    fi
+  fi
+done

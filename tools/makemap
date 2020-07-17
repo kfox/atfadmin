@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+# Creates a VL2 map archive from a set of source files.
+# Needs to be run from the parent of the missions directory.
+
+if [ ! -d "missions" ]; then
+  echo "error: no missions directory found!"
+  exit 2
+fi
+
+if [ -n "${1}" ]; then
+  BASENAME="${1}"
+else
+  NAME=$(ls -1 missions/*.mis)
+  BASENAME=$(basename "${NAME}" .mis)
+fi
+
+MAP="${BASENAME}.vl2"
+
+MAPDIRS=$(find . -mindepth 1 -maxdepth 1 -type d -print0 | xargs -0)
+MAPFILES=()
+
+for DIR in ${MAPDIRS}
+do
+  DIR=$(echo "${DIR}" | sed -e 's/^\.\///')
+  mapfile -t -O "${#MAPFILES[@]}" MAPFILES < <(
+    find "${DIR}" -type f -print0 | xargs -0
+  )
+done
+
+T2BASE=${HOME}/.loki/tribes2/base
+
+rm -f "${MAP}"
+chmod 644 "${MAPFILES[*]}"
+zip -r "${MAP}" "${MAPFILES[*]}"
+cp -fv "${MAP}" "${T2BASE}"
+
+rmdso
+mapwipe
+dfpcheck "${MAP}"
+
+exit 0

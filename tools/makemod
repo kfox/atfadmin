@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+# Creates a VL2 mod archive from a set of source files.
+
+OLDPWD=$PWD
+
+# change this to the parent directory of your mods
+T2SRC="${HOME}/t2/src"
+
+MATCH=$(echo "$PWD" | grep "^${T2SRC}")
+
+[ -z "${MATCH}" ] && exit
+
+SEDMATCH="s/$(echo ${T2SRC} | sed -e 's/\//\\\\\\//g'\\///)"
+
+DIR=$(echo "$MATCH" | sed -e "${SEDMATCH}" -e 's/\/.*$//')
+
+MODBASE="${T2SRC}/${DIR}"
+SCRIPTNAME=$(find "${MODBASE}" -type f -name "*Game.cs")
+COUNT=$(echo "${SCRIPTNAME}" | wc -w | sed 's/ //g')
+
+if [ -z "${SCRIPTNAME}" ] || [ "${COUNT}" -gt 1 ]; then
+	MODNAME=${DIR}
+else
+	MODNAME=$(basename "${SCRIPTNAME}" | sed 's/Game\.cs$//')
+fi
+
+MODNAME="${MODNAME}.vl2"
+
+pushd "${MODBASE}" || exit
+MODFILES=$(find ./* -type f -print0 | xargs -0)
+
+T2BASE=${HOME}/.loki/tribes2/base
+
+BUILD=${T2SRC}/build
+mkdir -p "${BUILD}"
+rm -f "${BUILD}/${MODNAME}"
+zip -r "${BUILD}/${MODNAME}" "${MODFILES}"
+rmdso
+cp -fv "${BUILD}/${MODNAME}" "${T2BASE}"
+
+popd "${OLDPWD}" || exit
+
+exit

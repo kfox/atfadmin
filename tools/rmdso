@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+find "${HOME}/.loki" -type f -name "*.dso" -exec rm -f \{\} \;
+rm -f "${HOME}/.loki/tribes2/console.log"

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+LOGDIR=${HOME}/logs
+
+# is logfile "stale"?
+LOGFILE=${LOGDIR}/console.log
+[ -z "`/usr/bin/find ${LOGFILE} -mmin +1 >/dev/null 2>&1`" ] && exit
+
+# get the pid or die trying
+PIDFILE=${LOGDIR}/t2start.pid
+[ ! -r "${PIDFILE}" ] && exit
+
+DATE=`date +"%Y%m%d%H%M%S"`
+echo "LOG: server hung at ${DATE}" >> ${LOGFILE}
+echo "Restarting ${USER} server after hang..."
+/home/pond/bin/tribes2 restart
+exit
