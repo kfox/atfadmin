@@ -521,7 +521,7 @@ function atfadmin_CommandAddbots(%sender, %paramList)
 	$atfadmin_addbotsMin = $atfadmin_param[1];
 	$atfadmin_addbotsMax = $atfadmin_param[2];
 
-	messageClient(%sender, 'MsgATFAdminCommand', '\c2Will add %1 bot%2 at the start of the next mission if bot enabled.', $atfadmin_addbotsNum, $atfadmin_addbotsNum > 1 ? "s" : "");
+	messageClient(%sender, 'MsgATFAdminCommand', '\c2Will add %1 bot%2 at the start of the next mission if bots are enabled.', $atfadmin_addbotsNum, $atfadmin_addbotsNum > 1 ? "s" : "");
 }
 
 function atfadmin_CommandRemovebots(%sender, %param)
